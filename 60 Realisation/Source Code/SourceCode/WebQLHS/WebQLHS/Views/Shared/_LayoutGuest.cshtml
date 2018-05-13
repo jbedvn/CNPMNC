@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Required meta tags -->
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Website Quản Lý Học Sinh</title>
+    <style type="text/css">
+        body {
+            background-image: url('https://static1.squarespace.com/static/52d6cb6be4b0b5fc69b8d205/t/5307d431e4b06c565def6aa7/1393022004734/education-background-checks.jpg?format=1500w');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .jumbotron {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                <img src="~/Content/Images/icon.png" width="30" height="30">
+                <b><i>school</i></b>
+            </a>
+        </div>
+
+        <div>
+            <ul class="navbar navbar-nav navbar-right">
+                <li>
+                    <a href="@Url.Action("DangNhap","TaiKhoans")"><button type="button" class="btn btn-primary">Đăng nhập</button></a>
+
+
+                </li>
+
+            </ul>
+        </div>
+
+
+    </nav>
+
+    <div class="container">
+
+
+
+        @RenderBody();
+    </div>
+
+
+
+</body>
+</html>

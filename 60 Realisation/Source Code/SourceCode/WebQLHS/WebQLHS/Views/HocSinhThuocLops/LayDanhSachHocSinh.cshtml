@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebQLHS.Models.HocSinhThuocLop>
+@{ 
+    Layout = null;
+    int i = 1;
+  }
+@foreach(var item in Model)
+{
+<tr>
+    <td>@(i++)</td>
+    <td>@item.HocSinh.MaHS</td>
+    <td>@item.HocSinh.Ho</td>
+    <td>@item.HocSinh.Ten</td>
+</tr>
+
+
+
+}

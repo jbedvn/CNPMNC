@@ -1,0 +1,51 @@
+﻿@model WebQLHS.Models.TaiKhoan
+
+@{
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Bạn cóm muốn xóa tài khoản này?</h3>
+    <div>
+        <h4>TaiKhoan</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.TaiKhoan1)</dt>
+            <dd>@Html.DisplayFor(model => model.TaiKhoan1)</dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.GiaoVien.MaGV)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GiaoVien.MaGV)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LoaiTaiKhoan.TenLoai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LoaiTaiKhoan.TenLoai)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Xóa tài khoản" class="btn btn-danger" /> 
+                <a href="@Url.Action("Index")"><button class="btn btn-warning">Trở về danh sách</button></a>
+            </div>
+        }
+    </div>
+</body>
+</html>

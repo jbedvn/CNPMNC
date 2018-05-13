@@ -1,0 +1,72 @@
+﻿@model WebQLHS.Models.Lop
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Chi tiếp lớp</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenLop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLop)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Edit", new { id = Model.MaLop })"><button class="btn btn-success">Sửa chi tiết</button></a>
+    <a href="@Url.Action("Index")"><button class="btn btn-warning">Trở về danh sách</button></a>
+
+</p>
+
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th colspan="7">
+                <form method="get">
+                    Nhập  <span style="color: red;">Mã</span> hoặc <span style="color: red;">Tên</span> lớp
+                    <input type="text" name="TimKiem">
+
+                    <button type="submit">Tìm kiếm</button>
+                </form>
+            </th>
+
+        </tr>
+        <tr>
+            <form method="get">
+                <th colspan="7">
+
+                    Sắp Xếp
+                    <select name="SapXep" onchange="document.getElementById('btnSapXep').click();">
+                        <option>Lựa chọn sắp xếp</option>
+                        <option value="az">Theo Tên A-Z</option>
+
+                        <option value="za">Theo Tên Z-A</option>
+
+                    </select>
+                    <button id="btnSapXep" type="submit" style="display:none;">Sắp xếp</button>
+                </th>
+            </form>
+        </tr>
+        <tr>
+            <th>STT</th>
+            <th>Mã học sinh</th>
+            <th>Họ</th>
+            <th>Tên</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+       @{Html.RenderAction("LayDanhSachHocSinh","HocSinhThuocLops",new { id=Model.MaLop});}
+    
+    </tbody>
+    </table>
+

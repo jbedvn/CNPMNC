@@ -1,0 +1,28 @@
+﻿@model WebQLHS.Models.MonHoc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<h2>Chi tiết môn học</h2>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenMH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Edit", new { id = Model.MaMH })"><button class="btn btn-success">Sửa chi tiết</button></a>
+    <a href="@Url.Action("Index")"><button class="btn btn-warning">Trở về danh sách</button></a>
+
+</p>

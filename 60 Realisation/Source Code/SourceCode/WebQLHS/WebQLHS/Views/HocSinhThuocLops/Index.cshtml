@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebQLHS.Models.HocSinhThuocLop>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Danh sách học sinh</h2>
+
+<p>
+    @Html.ActionLink("Thêm học sinh vào lớp", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HocSinh.MaHS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lop.TenLop)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HocSinh.MaHS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lop.TenLop)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebQLHS.Models.Lop>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Danh sách lớp</h2>
+
+<p>
+    @Html.ActionLink("Thêm lớp", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenLop)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenLop)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaLop }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaLop }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaLop })
+        </td>
+    </tr>
+}
+
+</table>

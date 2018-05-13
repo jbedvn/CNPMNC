@@ -1,0 +1,72 @@
+﻿    @model WebQLHS.Models.BangDiem
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+
+<h3>Bạn có chắc chắn muốn xóa thông tin này chứ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Diem15)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diem15)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diem1Tiet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diem1Tiet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiemTB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiemTB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HocKi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HocKi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HocSinh.MaHS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HocSinh.MaHS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MonHoc.TenMH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonHoc.TenMH)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a href="@Url.Action("Index")"><button class="btn btn-warning">Trở về danh sách</button></a>
+        </div>
+    }
+</div>

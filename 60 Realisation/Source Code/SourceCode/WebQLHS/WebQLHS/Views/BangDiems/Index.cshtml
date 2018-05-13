@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebQLHS.Models.BangDiem>
+
+@{
+    int stt = 1;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Bảng điểm</h2>
+
+<table class="table">
+    <tr>
+        <th>STT</th>
+        <th>
+            @Html.DisplayNameFor(model => model.HocSinh.MaHS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonHoc.TenMH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diem15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diem1Tiet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiemTB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HocKi)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@(stt++)</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HocSinh.MaHS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonHoc.TenMH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diem15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diem1Tiet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiemTB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HocKi)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) 
+          
+        </td>
+    </tr>
+}
+
+</table>

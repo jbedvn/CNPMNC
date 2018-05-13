@@ -1,0 +1,35 @@
+﻿@model WebQLHS.Models.HocSinhThuocLop
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HocSinhThuocLop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HocSinh.MaHS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HocSinh.MaHS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lop.TenLop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lop.TenLop)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

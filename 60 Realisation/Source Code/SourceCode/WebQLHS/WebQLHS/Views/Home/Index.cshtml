@@ -1,0 +1,30 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_LayoutGuest.cshtml";
+}
+
+
+<div style="margin-top:100px;" class="jumbotron">
+    <div class="row">
+        <div class="col-md-12"><h2>Nhập số điện thoại phụ huynh hoặc mã học sinh để tra cứu điểm</h2></div>
+        <p style="color:red;">@ViewData["Loi"]</p>
+        <div class="col-md-12">
+
+            <div id="custom-search-input">
+                <form action="/Home/TraCuuDiem" method="get">
+                    <div class="input-group col-md-12">
+
+
+                        <input type="text" class="form-control input-lg" name="MaHS" placeholder="Số điện thoại hoặc Mã học sinh" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-lg" type="submit">
+                                Tra Cứu Điểm
+                            </button>
+                        </span>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

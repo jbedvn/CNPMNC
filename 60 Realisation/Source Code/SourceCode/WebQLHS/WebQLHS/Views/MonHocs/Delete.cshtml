@@ -1,0 +1,33 @@
+﻿@model WebQLHS.Models.MonHoc
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+
+<h3>Bạn có chắc chắn muốn xóa thông tin này?</h3>
+<div>
+    <h4>MonHoc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenMH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMH)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Xóa môn học" class="btn btn-danger" />
+        <a href="@Url.Action("Index")"><button class="btn btn-warning">Trở về danh sách</button></a>
+    </div>
+    }
+</div>

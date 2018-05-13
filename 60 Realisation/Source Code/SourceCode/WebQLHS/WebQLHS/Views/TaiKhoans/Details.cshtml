@@ -1,0 +1,48 @@
+﻿@model WebQLHS.Models.TaiKhoan
+@{
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Thông tin tài khoản</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>@Html.DisplayNameFor(model=>model.TaiKhoan1)</dt>
+            <dd>@Html.DisplayFor(model=>model.TaiKhoan1)</dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.GiaoVien.MaGV)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GiaoVien.MaGV)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LoaiTaiKhoan.TenLoai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LoaiTaiKhoan.TenLoai)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+       <a href="@Url.Action("Edit", new { id = Model.TaiKhoan1 })"><button class="btn btn-success">Sửa chi tiết</button></a> 
+        <a href="@Url.Action("Index")"><button class="btn btn-warning">Trở về danh sách</button></a>
+    </p>
+
+    <div>
+        
+    </div>
+</body>
+</html>

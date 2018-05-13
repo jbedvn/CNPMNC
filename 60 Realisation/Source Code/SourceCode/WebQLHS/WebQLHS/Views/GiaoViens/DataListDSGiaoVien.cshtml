@@ -1,0 +1,8 @@
+﻿@model IEnumerable<WebQLHS.Models.GiaoVien>
+
+<datalist id="DanhSachGiaoVien" >
+    @foreach(var item in Model)
+    {
+        <option value="@item.MaGV">@item.IDGV</option>
+    }
+</datalist>

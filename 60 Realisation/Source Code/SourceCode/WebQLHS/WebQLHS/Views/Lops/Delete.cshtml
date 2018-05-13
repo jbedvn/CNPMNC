@@ -1,0 +1,37 @@
+﻿@model WebQLHS.Models.Lop
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<h3>Bạn có chắc chắn muốn xóa thông tin này?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenLop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLop)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <div>
+            <a href="@Url.Action("Index")"><button class="btn btn-warning">Trở về danh sách</button></a>
+        </div>
+
+
+    </div>
+    }
+</div>
